@@ -21,22 +21,4 @@
         </repository>
     </distributionManagement>
 
-    <repositories>
-        <repository>
-            <id>github</id>
-            <name>GitHub mfoulks3200 Apache Maven Packages</name>
-            <url>https://maven.pkg.github.com/mfoulks3200/Lumberjack</url>
-            <releases><enabled>true</enabled></releases>
-            <snapshots><enabled>true</enabled></snapshots>
-        </repository>
-    </repositories>
-
-    <dependencies>
-        <dependency>
-            <groupId>com.atlaspuplabs.lumberjack</groupId>
-            <artifactId>lumberjack</artifactId>
-            <version>1.0.1.22.10.26</version>
-        </dependency>
-    </dependencies>
-
 </project>

@@ -1,8 +1,5 @@
 package com.atlaspuplabs.configurator;
 
-import com.atlaspuplabs.lumberjack.Event;
-import com.atlaspuplabs.lumberjack.EventType;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
@@ -20,8 +17,7 @@ public class Resources {
             }
             reader.close();
         } catch (FileNotFoundException e) {
-            new Event(EventType.CRITICAL,e.getMessage());
-            new Event(EventType.CRITICAL,e.toString());
+            e.printStackTrace();
         }
         return output;
     }
@@ -36,8 +32,7 @@ public class Resources {
             writer.write(content);
             writer.close();
         } catch (Exception e) {
-            new Event(EventType.CRITICAL,e.getMessage());
-            new Event(EventType.CRITICAL,e.toString());
+            e.printStackTrace();
         }
     }
 
@@ -52,8 +47,7 @@ public class Resources {
             writer.write(current+(current.length() > 0 ? "\n" : "")+content);
             writer.close();
         } catch (Exception e) {
-            new Event(EventType.CRITICAL,e.getMessage());
-            new Event(EventType.CRITICAL,e.toString());
+            e.printStackTrace();
         }
     }
 
@@ -64,8 +58,7 @@ public class Resources {
                 file.createNewFile();
             }
         } catch (Exception e) {
-            new Event(EventType.CRITICAL,e.getMessage());
-            new Event(EventType.CRITICAL,e.toString());
+            e.printStackTrace();
         }
     }
 

@@ -1,6 +1,5 @@
 package com.atlaspuplabs.configurator;
 
-import com.atlaspuplabs.lumberjack.Event;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -55,7 +54,6 @@ public class Configuration {
                 ConfigurationSection newSection = getSection(sectionName);
                 if(newSection != null){
                     current = newSection;
-                    new Event("New section: "+current.name);
                 }else{
                     current = new ConfigurationSection(sectionName);
                     sections.add(current);
@@ -65,7 +63,6 @@ public class Configuration {
             if(line.charAt(0) == '#'){
                 continue;
             }
-            new Event(line);
             String key = line.split("=")[0];
             String value = line.substring(line.indexOf('=')+1);
             ConfigurationItem item = current.get(key);
@@ -75,7 +72,6 @@ public class Configuration {
                 current.items.add(new ConfigurationItem(key, "", value));
             }
         }
-        new Event(this.toString());
     }
 
     public String toString(){
